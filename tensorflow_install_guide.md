@@ -4,7 +4,7 @@
 
 
 
-- [使用pip安装](#pip 安装 tensorflow)
+- [使用pip安装](#pip安装tensorflow)
 
 - [使用docker](Docker)
 
@@ -20,7 +20,7 @@
 
 ## 软件包
 
-### pip 安装 tensorflow
+### pip安装tensorflow
 
 > 系统要求
 > Python 3.6–3.9
