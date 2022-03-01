@@ -11,7 +11,7 @@
   - [NVIDIA驱动](#NVIDIA显卡驱动)
   - [CUDA](#安装CUDA)
   - [cuDNN](#cuDNN下载)
-  - [nvidia-container-toolkit](#NVIDIA Container Toolkit)
+  - [nvidia-container-toolkit](#NVIDIA_Container_Toolkit)
 
 - 扩展：深度学习框架
   - [Tensorflow](./tensorflow_install_guide.md)
@@ -297,7 +297,7 @@ sudo rm -rf /usr/local/cuda-10.2/
 
 ---
 
-### NVIDIA Container Toolkit 
+### NVIDIA_Container_Toolkit 
 
 官网安装步骤: [installing-on-ubuntu-and-debian](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
