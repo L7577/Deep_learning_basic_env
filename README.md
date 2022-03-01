@@ -11,7 +11,7 @@
   - [NVIDIA驱动](#NVIDIA显卡驱动)
   - [CUDA](#安装CUDA)
   - [cuDNN](#cuDNN下载)
-  - [nvidia-container-toolkit](#NVIDIA Container Toolkit )
+  - [nvidia-container-toolkit](#NVIDIA Container Toolkit)
 
 - 扩展：深度学习框架
   - [Tensorflow](./tensorflow_install_guide.md)
