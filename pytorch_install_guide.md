@@ -56,7 +56,7 @@ GPU支持
 
 开始安装，点开官网选择对应的版本和安装方式。
 
-![](/home/l/Deep_learning_environment/pictures/pytorch安装选项.png)
+![](./pictures/pytorch安装选项.png)
 
 
 
