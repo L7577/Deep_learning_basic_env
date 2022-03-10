@@ -22,6 +22,8 @@
 
 
 
+*注:实验均在ubuntu18.04中进行*
+
 
 
 ## 系统环境配置
@@ -121,6 +123,20 @@ sudo apt install git
 ### docker
 
 官网安装指南: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+官方网址提供了三种安装方式，细节请参考官网！
+
+>You can install Docker Engine in different ways, depending on your needs:
+>- Most users [set up Docker’s repositories](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) and install from them, for ease of installation and upgrade tasks. This is the recommended approach.
+>- Some users download the DEB package and [install it manually](https://docs.docker.com/engine/install/ubuntu/#install-from-a-package) and manage upgrades completely manually. This is useful in situations such as installing Docker on air-gapped systems with no access to the internet.
+>- In testing and development environments, some users choose to use automated [convenience scripts](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script) to install Docker.
+
+
+
+但**请注意在ubuntu中，可以使用docker.io版本，也就是ubuntu团队维护的Docker版本**
+
+Docker官方维护的版本有：docker-ce (社区免费版本) 、docker-ee(企业收费版)
+
+推荐在ubuntu中使用docker.io版，所有依赖由系统负责，更方便安装以及升级。
 
 ```sh
 #安装docker
@@ -135,9 +151,17 @@ systemctl enable docker
 
 #查看版本信息
 docker version
+
+docker info
+
+#如何卸载docker？
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
 ```
 
-针对无`sudo`命令下运行docker,需要创建docker用户组,参考：[Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+针对非root用户或在无`sudo`命令下运行docker,需要创建docker用户组,参考：[Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
 
 ```sh
  #创建docker用户组
@@ -175,7 +199,7 @@ docker version
 
 ## 关于NVIDIA
 
-做深度学习，使用GPU进行加速已经必不可少的操作。
+做深度学习，使用GPU进行加速已是必不可少的操作。
 
 ### NVIDIA显卡驱动
 
@@ -307,7 +331,7 @@ sudo rm -rf /usr/local/cuda-10.2/
 >- NVIDIA GPU with Architecture >= Kepler (or compute capability 3.0)
 >- [NVIDIA Linux drivers](http://www.nvidia.com/object/unix.html) >= 418.81.07 (Note that older driver releases or branches are unsupported.)
 
-
+*注意：确保docker 版本>=19.03，否则可能要使用 nvidia-docker2*
 
 确保先需条件通过后，开始安装
 
