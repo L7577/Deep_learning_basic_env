@@ -439,6 +439,17 @@ sudo docker run --rm nvidia/cuda:10.0-base nvidia-smi
 
 
 
+### NGC
+
+>**Build End-to-End AI With NGC On-Premises, in the Cloud, or at the Edge**
+>NVIDIA NGC™ hosts a catalog of GPU-optimized software for AI practitioners to develop their AI solutions. It also provides access to various AI services including NVIDIA Base Command for model training, NVIDIA Fleet Command to deploy and monitor models, and the NGC Private Registry for securely accessing and managing proprietary AI software. Also, NVIDIA AI Enterprise customers can request support through the NGC portal.
+
+[what-is-nvidia-ngc](https://docs.nvidia.com/ngc/ngc-overview/index.html#what-is-nvidia-ngc)
+
+https://catalog.ngc.nvidia.com/
+
+
+
 
 
 基础运行环境配置结束。
