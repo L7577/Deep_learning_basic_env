@@ -50,7 +50,7 @@ all:
 
 .PHONY:cuda
 cuda:CUDA:=11.0
-cuda:CUDNN:=
+cuda:CUDNN?=
 cuda:RUN_IMAGE=$(CUDA_IMAGE)
 cuda:
 	@echo "$(RUN_CMD)"
