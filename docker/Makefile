@@ -1,9 +1,29 @@
+# try to infer the correct DOCKER
+ifndef DOCKER
+DOCKER  :=$(shell if which docker > /dev/null; \
+  then echo 'docker'; exit; \
+  else \
+  printf "***\n" 1>&2; \
+  printf "***Error: Couldn't find a docker executable.\n" 1>&2; \
+  printf "***\n" 1>&2; exit 1; fi)
+endif
+
+V		:= @
+
+DEFAULT_RUNTIME =$(shell docker info 2>/dev/null | sed '/Runtime:/!d;s/.* //')
+RUNTIMES=$(shell docker info 2>/dev/null | sed -e '/Runtimes:/!d' -e '/nvidia/!d;s/.*/nvidia/')
+ifneq ("$(RUNTIMES)","nvidia")
+$(warning WARNING:Runtimes is not found nvidia, should set it!)
+endif
+ifneq ("$(DEFAULT_RUNTIME)","nvidia")
+$(warning WARNING:Default runtime is not nvidia, should set it)
+endif
+
+######################################
 #CUDA and cuDNN 
 #devel base  runtime  
 CUDA_TAG		=-devel
 SYSTEM			=-ubuntu18.04
-
-DOCKER_DEFAULT_RUNTIME =$(shell docker info 2>/dev/null | sed '/Runtime:/!d;s/.* //')
 
 CUDA_IMAGE		=nvidia/cuda:$(CUDA)$(CUDNN)$(CUDA_TAG)$(SYSTEM)
 
@@ -16,10 +36,7 @@ TENSORFLOW_TAG		=-devel
 
 TAG_VARIANTS		?=-gpu-jupyter
 #Tag Variants gpu  or gpu-jupyter
-ifeq ("DOCKER_DEFAULT_RUNTIME","")
-$(Warning WARNING: Docker default runtime is not nvidia,please check it!)
-TAG_VARIANTS		=-jupyter
-endif
+#TAG_VARIANTS		=-jupyter
 
 TENSORFLOW_IMAGE	=tensorflow/tensorflow:$(TENSORFLOW_VERSION)$(TAG_VARIANTS)
 
