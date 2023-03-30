@@ -4,7 +4,6 @@
   - [ubuntu 18.04](#ubuntu)
   - [国内镜像源](#国内镜像源)
   - [基本工具](#基本工具)
-  - [科学上网](#科学上网)
   - [docker](#docker)
 
 - 关于NVIDIA
@@ -101,18 +100,6 @@ git是必不可少的代码管理工具，一定要安装
 sudo apt install git
 
 ```
-
-
-
----
-
-### 科学上网
-
-
-
-可参考： https://github.com/xiaoming2028/FreePAC
-
-
 
 
 
